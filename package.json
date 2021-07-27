@@ -25,6 +25,12 @@
       "react-app/jest"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
