@@ -25,14 +25,6 @@
       "react-app/jest"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -57,5 +49,16 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.1.1",
     "prettier": "^2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
