@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components/macro";
+import React from 'react';
+import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   width: 100%;
@@ -9,8 +10,12 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ContainerWrapper = (props) => {
-  return <Container>{props.children}</Container>;
+const ContainerWrapper = ({ children }) => <Container>{children}</Container>;
+
+ContainerWrapper.defaultProps = {};
+
+ContainerWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default ContainerWrapper;

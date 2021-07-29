@@ -1,10 +1,20 @@
-import React, { useState } from "react";
-import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
-import ContainerWrapper from "../templates/ContainerWrapper";
-import LoginWrapper from "../templates/LoginWrapper";
+import React, { useState } from 'react';
+import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import UserIconImage from "../../assets/user.png";
+// components
+
+// atoms
+import InputField from '../atoms/InputField/InputField';
+import StyledButton from '../atoms/Button/StyledButton';
+
+// templates
+import ContainerWrapper from '../templates/ContainerWrapper';
+import LoginWrapper from '../templates/LoginWrapper';
+
+// assets
+import UserIconImage from '../../assets/user.png';
 
 const LoginHeader = styled.div`
   width: 100%;
@@ -35,41 +45,10 @@ const LoginForm = styled.form`
   align-items: center;
 `;
 
-const Input = styled.input`
-  background: #dadada;
-  width: 100%;
-  border: none;
-  outline: none;
-  padding: 0.75rem 1rem;
-  margin: 0.5rem 0rem;
-  border-radius: 0.5rem;
-`;
-
 const ErrorMessage = styled.p`
   color: red;
   font-size: 0.9rem;
   font-weight: 600;
-`;
-
-const LoginButton = styled.button`
-  display: block;
-  margin-top: 0.75rem;
-  width: 100%;
-  background: #1877f2;
-  border: none;
-  outline: none;
-  font-family: inherit;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #ffffff;
-  padding: 0.75rem 0;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  opacity: 0.95;
-
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 const MoreActionsContainer = styled.div`
@@ -129,17 +108,16 @@ const AuthSwitchLink = styled(Link)`
 `;
 
 const Login = ({ authSuccess }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [authorized, setAuthorized] = useState(true);
 
-  const handleLoginClick = (user_email, user_password, e) => {
+  const handleLoginClick = (e) => {
     e.preventDefault();
-    if (user_email === "demo@demo.com" && user_password === "demo") {
+    if (email === 'demo@demo.com' && password === 'demo') {
       authSuccess();
     } else {
       setAuthorized(false);
-
       setTimeout(() => {
         setAuthorized(true);
       }, [2000]);
@@ -149,51 +127,53 @@ const Login = ({ authSuccess }) => {
     <ContainerWrapper>
       <LoginWrapper>
         <LoginHeader>
-          <UserIcon src={UserIconImage} alt='User' />
-          <LoginHeading>Sign In</LoginHeading>
+          <UserIcon src={UserIconImage} alt="User" />
+          <LoginHeading>Sign In Form</LoginHeading>
         </LoginHeader>
-        <LoginForm onSubmit={handleLoginClick.bind(null, email, password)}>
-          <Input
-            type='email'
-            placeholder='E-mail'
-            autoComplete='false'
+        <LoginForm onSubmit={handleLoginClick}>
+          <InputField
+            type="email"
+            placeholder="E-mail"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
-          <Input
-            type='password'
-            placeholder='Password'
-            autoComplete='false'
+          <InputField
+            type="password"
+            placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
           {!authorized && <ErrorMessage>Wrong credentials!</ErrorMessage>}
-          <LoginButton onClick={handleLoginClick.bind(null, email, password)}>
-            Sign In
-          </LoginButton>
+          <StyledButton onClick={handleLoginClick}>Sign In</StyledButton>
           <MoreActionsContainer>
             <RememberMe>
               <RememberMeCheckbox
-                type='checkbox'
-                name='remember-me'
-                id='rememberMe'
+                type="checkbox"
+                name="remember-me"
+                id="rememberMe"
               />
-              <RememberMeLabel htmlFor='rememberMe'>
+              <RememberMeLabel htmlFor="rememberMe">
                 Remember Me
               </RememberMeLabel>
             </RememberMe>
-            <ForgotPasswordLink href='#'>Forgot Password ?</ForgotPasswordLink>
+            <ForgotPasswordLink href="#">Forgot Password ?</ForgotPasswordLink>
           </MoreActionsContainer>
         </LoginForm>
         <AuthSwitchContainer>
           <AuthSwitchText>
-            Don't have an account?
-            <AuthSwitchLink to='/signup'>Register</AuthSwitchLink>
+            Don&apos;t have an account?
+            <AuthSwitchLink to="/signup">Register</AuthSwitchLink>
           </AuthSwitchText>
         </AuthSwitchContainer>
       </LoginWrapper>
     </ContainerWrapper>
   );
+};
+
+Login.defaultProps = {};
+
+Login.propTypes = {
+  authSuccess: PropTypes.func.isRequired,
 };
 
 export default Login;

@@ -1,49 +1,28 @@
-import React from "react";
-import styled from "styled-components/macro";
-import ContainerWrapper from "../templates/ContainerWrapper";
-import DivWrapper from "../templates/DivWrapper";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const WelcomeText = styled.h1`
-  color: #ffffff;
-  font-size: 5rem;
-  text-align: center;
-  margin-bottom: 2rem;
+// components
+// atoms
 
-  @media (max-width: 1000px) {
-    font-size: 4rem;
-  }
+// molecules
+import HomeContainer from '../molecules/HomeContainer';
 
-  @media (max-width: 800px) {
-    font-size: 3rem;
-  }
+// templates
+import ContainerWrapper from '../templates/ContainerWrapper';
+import DivWrapper from '../templates/DivWrapper';
 
-  @media (max-width: 500px) {
-    font-size: 2rem;
-  }
-`;
+const Home = ({ handleLogout }) => (
+  <ContainerWrapper>
+    <DivWrapper>
+      <HomeContainer handleLogout={handleLogout} />
+    </DivWrapper>
+  </ContainerWrapper>
+);
 
-const LogoutButton = styled.button`
-  background: none;
-  outline: none;
-  display: block;
-  border: none;
-  color: #ffffff;
-  font-size: 1.25rem;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  width: 50%;
-  margin: 0 auto;
-`;
+Home.defaultProps = {};
 
-const Home = ({ handleLogout }) => {
-  return (
-    <ContainerWrapper>
-      <DivWrapper>
-        <WelcomeText>Yay! You are logged in!</WelcomeText>
-        <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
-      </DivWrapper>
-    </ContainerWrapper>
-  );
+Home.propTypes = {
+  handleLogout: PropTypes.func.isRequired,
 };
 
 export default Home;

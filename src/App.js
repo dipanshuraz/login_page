@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
 
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Signup from "./components/pages/Signup";
+import Home from './components/pages/Home';
+import Login from './components/pages/Login';
+import Signup from './components/pages/Signup';
 
 function App() {
   const history = useHistory();
@@ -11,12 +11,12 @@ function App() {
 
   const authSuccess = () => {
     setLoggedIn(true);
-    history.replace("/");
+    history.replace('/');
   };
 
   const handleLogout = () => {
     setLoggedIn(false);
-    history.replace("/");
+    history.replace('/');
   };
 
   return (
@@ -24,18 +24,18 @@ function App() {
       <Switch>
         <Route
           exact
-          path='/'
+          path="/"
           render={() =>
-            loggedIn ? <Redirect to='/home' /> : <Redirect to='/login' />
+            loggedIn ? <Redirect to="/home" /> : <Redirect to="/login" />
           }
         />
-        <Route path='/signup'>
+        <Route path="/signup">
           <Signup />
         </Route>
-        <Route path='/login'>
+        <Route path="/login">
           <Login authSuccess={authSuccess} />
         </Route>
-        <Route path='/home'>
+        <Route path="/home">
           <Home handleLogout={handleLogout} />
         </Route>
       </Switch>

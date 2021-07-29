@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components/macro";
+import React from 'react';
+import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   width: 35%;
@@ -26,8 +27,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const LoginWrapper = (props) => {
-  return <Wrapper>{props.children}</Wrapper>;
+const LoginWrapper = ({ children }) => <Wrapper>{children}</Wrapper>;
+
+LoginWrapper.defaultProps = {};
+
+LoginWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default LoginWrapper;
