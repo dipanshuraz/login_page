@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
+
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
 
 function App() {
+  const history = useHistory();
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const authSuccess = () => {
+    setLoggedIn(true);
+    history.replace("/");
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    history.replace("/");
+  };
+
   return (
-    <div className="App">
-      HELLO
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route
+          exact
+          path='/'
+          render={() =>
+            loggedIn ? <Redirect to='/home' /> : <Redirect to='/login' />
+          }
+        />
+        <Route path='/signup'>
+          <Signup />
+        </Route>
+        <Route path='/login'>
+          <Login authSuccess={authSuccess} />
+        </Route>
+        <Route path='/home'>
+          <Home handleLogout={handleLogout} />
+        </Route>
+      </Switch>
     </div>
   );
 }
