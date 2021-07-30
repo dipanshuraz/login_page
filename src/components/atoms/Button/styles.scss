@@ -1,0 +1,17 @@
+$margin-top: 0.75rem;
+$medium-text: 1.25rem;
+
+.custom-button {
+  display: block;
+  margin-top: $margin-top;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: $medium-text;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 0.95;
+}
