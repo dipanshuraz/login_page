@@ -2,7 +2,7 @@
 
 - [x] Basic Rules
 - [x] Class vs React.createClass vs stateless - (Class components)
-- [ ] Mixins -
+- [ ] Mixins - (Class components)
 - [x] Naming +
 - [x] Declaration +
 - [x] Alignment +
