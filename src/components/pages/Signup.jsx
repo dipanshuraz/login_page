@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // components
 // atoms
 import InputField from "../atoms/InputField";
-import Button from "../atoms/Button";
+import Button from "../atoms/Button/Button";
 
 // templates
 import ContainerWrapper from "../layouts/ContainerWrapper";

@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 // atoms
 import InputField from "../atoms/InputField";
-import Button from "../atoms/Button";
+import Button from "../atoms/Button/Button";
 
 // assets
 import UserIconImage from "../../assets/user.png";

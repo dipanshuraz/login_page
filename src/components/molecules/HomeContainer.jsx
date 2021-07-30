@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 // components
 // atoms
-import Button from "../atoms/Button";
+import Button from "../atoms/Button/Button";
 import Text from "../atoms/Text";
 
 const HomeContainer = ({ handleLogout }) => (
