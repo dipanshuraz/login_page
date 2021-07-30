@@ -8,8 +8,8 @@ import PropTypes from 'prop-types';
 import HomeContainer from '../molecules/HomeContainer';
 
 // templates
-import ContainerWrapper from '../templates/ContainerWrapper';
-import DivWrapper from '../templates/DivWrapper';
+import ContainerWrapper from '../layouts/ContainerWrapper';
+import DivWrapper from '../layouts/DivWrapper';
 
 const Home = ({ handleLogout }) => (
   <ContainerWrapper>

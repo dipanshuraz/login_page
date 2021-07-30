@@ -4,36 +4,16 @@ import { Link } from 'react-router-dom';
 
 // components
 // atoms
-import InputField from '../atoms/InputField/InputField';
-import StyledButton from '../atoms/Button/StyledButton';
+import InputField from '../atoms/InputField';
+import Button from '../atoms/Button';
 
 // templates
-import ContainerWrapper from '../templates/ContainerWrapper';
-import LoginWrapper from '../templates/LoginWrapper';
+import ContainerWrapper from '../layouts/ContainerWrapper';
+import LoginWrapper from '../layouts/LoginWrapper';
 
 // assets
 import UserIconImage from '../../assets/user.png';
-
-const SignupHeader = styled.div`
-  width: 100%;
-  margin: 2rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const UserIcon = styled.img`
-  vertical-align: middle;
-  transform: scale(1.2);
-  display: block;
-  margin-bottom: 1.25rem;
-`;
-
-const SignupHeading = styled.h1`
-  font-size: 2rem;
-  letter-spacing: 0.3px;
-`;
+import FormHeader from '../molecules/FormHeader';
 
 const SignupForm = styled.form`
   width: 70%;
@@ -43,37 +23,6 @@ const SignupForm = styled.form`
   flex-direction: column;
   align-items: center;
 `;
-
-// const Input = styled.input`
-//   background: #dadada;
-//   width: 100%;
-//   border: none;
-//   outline: none;
-//   padding: 0.75rem 1rem;
-//   margin: 0.5rem 0rem;
-//   border-radius: 0.5rem;
-// `;
-
-// const SignupButton = styled.button`
-//   display: block;
-//   margin-top: 0.75rem;
-//   width: 100%;
-//   background: #1877f2;
-//   border: none;
-//   outline: none;
-//   font-family: inherit;
-//   font-weight: 600;
-//   font-size: 1.25rem;
-//   color: #ffffff;
-//   padding: 0.75rem 0;
-//   border-radius: 0.5rem;
-//   cursor: pointer;
-//   opacity: 0.95;
-
-//   &:hover {
-//     opacity: 1;
-//   }
-// `;
 
 const AuthSwitchContainer = styled.div`
   width: 100%;
@@ -99,10 +48,7 @@ const AuthSwitchLink = styled(Link)`
 const Signup = () => (
   <ContainerWrapper>
     <LoginWrapper>
-      <SignupHeader>
-        <UserIcon src={UserIconImage} alt="User" />
-        <SignupHeading>Sign Up</SignupHeading>
-      </SignupHeader>
+      <FormHeader icon={UserIconImage} text="Sign Up" />
       <SignupForm>
         <InputField type="text" placeholder="Full Name" autoComplete="false" />
         <InputField type="email" placeholder="E-mail" autoComplete="false" />
@@ -116,7 +62,9 @@ const Signup = () => (
           placeholder="Confirm Password"
           autoComplete="false"
         />
-        <StyledButton>Sign Up</StyledButton>
+        <Button color="#ffffff" bg="#1877f2">
+          Sign up
+        </Button>
       </SignupForm>
       <AuthSwitchContainer>
         <AuthSwitchText>

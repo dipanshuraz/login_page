@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/macro';
 
-const Button = styled.button`
+const ButtonWrapper = styled.button`
   display: block;
   margin-top: 0.75rem;
   width: 100%;
-  background: #1877f2;
+  background-color: ${(props) => props.bg};
+  color: ${(props) => props.color};
   border: none;
   outline: none;
   font-family: inherit;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
   padding: 0.75rem 0;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -24,23 +24,30 @@ const Button = styled.button`
 `;
 
 /* eslint no-unused-vars : "off" */
-const StyledButton = ({ children, classes, onClick, ...props }) => (
-  <Button type="button" onClick={onClick} className={classes}>
+const Button = ({ bg, color, children, classes, onClick }) => (
+  <ButtonWrapper
+    color={color}
+    bg={bg}
+    type="button"
+    onClick={onClick}
+    className={classes}>
     {children}
-  </Button>
+  </ButtonWrapper>
 );
 
-StyledButton.defaultProps = {
-  fullWidth: false,
+Button.defaultProps = {
   classes: '',
   onClick: () => {},
+  bg: '',
+  color: '',
 };
 
-StyledButton.propTypes = {
+Button.propTypes = {
   children: PropTypes.node.isRequired,
-  fullWidth: PropTypes.bool,
   classes: PropTypes.string,
   onClick: PropTypes.func,
+  bg: PropTypes.string,
+  color: PropTypes.string,
 };
 
-export default StyledButton;
+export default Button;
