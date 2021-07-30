@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-import PropTypes from 'prop-types';
+import React from "react";
+import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   width: 35%;

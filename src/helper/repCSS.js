@@ -1,7 +1,7 @@
-import { bp } from '../theme';
+import { bp } from "../theme";
 
 const respCss = (rule, values) => {
-  let styles = '';
+  let styles = "";
 
   if (!values) {
     return;

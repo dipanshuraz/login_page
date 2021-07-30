@@ -10,18 +10,18 @@
     "semi": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/no-extraneous-dependencies": [
+      0,
       {
         "devDependencies": false,
         "optionalDependencies": false,
         "peerDependencies": false
       }
-    ],
-
-    "prettier/prettier": [
-      "error",
-      {
-        "semi": true
-      }
     ]
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "semi": true
+    //   }
+    // ]
   }
 }

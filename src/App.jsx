@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Switch, Route, Redirect, useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 
-import Home from './components/pages/Home';
-import Login from './components/pages/Login';
-import Signup from './components/pages/Signup';
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
 
 function App() {
   const history = useHistory();
@@ -11,12 +11,12 @@ function App() {
 
   const authSuccess = () => {
     setLoggedIn(true);
-    history.replace('/');
+    history.replace("/");
   };
 
   const handleLogout = () => {
     setLoggedIn(false);
-    history.replace('/');
+    history.replace("/");
   };
 
   return (

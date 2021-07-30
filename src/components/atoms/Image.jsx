@@ -1,6 +1,6 @@
-import * as React from 'react';
-import styled from 'styled-components/macro';
-import PropTypes from 'prop-types';
+import * as React from "react";
+import styled from "styled-components/macro";
+import PropTypes from "prop-types";
 
 const Img = styled.img`
   display: block;
@@ -12,7 +12,7 @@ const Img = styled.img`
     props.cover &&
     `
       object-fit: cover;
-      object-position: ${props.position || 'center'};
+      object-position: ${props.position || "center"};
       height: 100%;
     `}
 `;
@@ -28,11 +28,11 @@ const Image = ({ cover, url, position, align, margin }) => (
 );
 
 Image.defaultProps = {
-  cover: '',
-  url: '#',
-  position: '',
-  align: '',
-  margin: '',
+  cover: "",
+  url: "#",
+  position: "",
+  align: "",
+  margin: "",
 };
 
 Image.propTypes = {

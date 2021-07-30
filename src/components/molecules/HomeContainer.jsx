@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 // components
 // atoms
-import Button from '../atoms/Button';
-import Text from '../atoms/Text';
+import Button from "../atoms/Button";
+import Text from "../atoms/Text";
 
 const HomeContainer = ({ handleLogout }) => (
   <>

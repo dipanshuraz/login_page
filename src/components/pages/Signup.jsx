@@ -1,19 +1,19 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 // components
 // atoms
-import InputField from '../atoms/InputField';
-import Button from '../atoms/Button';
+import InputField from "../atoms/InputField";
+import Button from "../atoms/Button";
 
 // templates
-import ContainerWrapper from '../layouts/ContainerWrapper';
-import LoginWrapper from '../layouts/LoginWrapper';
+import ContainerWrapper from "../layouts/ContainerWrapper";
+import LoginWrapper from "../layouts/LoginWrapper";
 
 // assets
-import UserIconImage from '../../assets/user.png';
-import FormHeader from '../molecules/FormHeader';
+import UserIconImage from "../../assets/user.png";
+import FormHeader from "../molecules/FormHeader";
 
 const SignupForm = styled.form`
   width: 70%;

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // components
 
 // atoms
-import InputField from '../atoms/InputField';
-import Button from '../atoms/Button';
+import InputField from "../atoms/InputField";
+import Button from "../atoms/Button";
 
 // assets
-import UserIconImage from '../../assets/user.png';
-import FormHeader from '../molecules/FormHeader';
+import UserIconImage from "../../assets/user.png";
+import FormHeader from "../molecules/FormHeader";
 
 const LoginForm = styled.form`
   width: 70%;
@@ -84,13 +84,13 @@ const AuthSwitchLink = styled(Link)`
 `;
 
 const Form = ({ authSuccess }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [authorized, setAuthorized] = useState(true);
 
   const checkNow = (e) => {
     e.preventDefault();
-    if (email === 'demo@demo.com' && password === 'demo') {
+    if (email === "demo@demo.com" && password === "demo") {
       authSuccess();
     } else {
       setAuthorized(false);

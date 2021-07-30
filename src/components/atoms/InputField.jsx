@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components/macro";
 
 const Input = styled.input`
   background: #dadada;
@@ -24,11 +24,11 @@ const InputField = ({ placeholder, value, onChange, classes, testId }) => (
 );
 
 InputField.defaultProps = {
-  testId: '',
-  value: '',
+  testId: "",
+  value: "",
   onChange: () => {},
-  placeholder: '',
-  classes: '',
+  placeholder: "",
+  classes: "",
 };
 
 InputField.propTypes = {
