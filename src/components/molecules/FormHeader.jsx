@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components/macro";
 
 // components
 // atoms
-import Text from '../atoms/Text';
-import Image from '../atoms/Image';
+import Text from "../atoms/Text";
+import Image from "../atoms/Image";
 
-import UserIconImage from '../../assets/user.png';
+import UserIconImage from "../../assets/user.png";
 
 const LoginHeader = styled.div`
   width: 100%;
@@ -33,7 +33,7 @@ const FormHeader = ({ text }) => (
 );
 
 FormHeader.defaultProps = {
-  text: '',
+  text: "",
 };
 
 FormHeader.propTypes = {

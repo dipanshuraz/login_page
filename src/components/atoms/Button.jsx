@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components/macro";
 
 const ButtonWrapper = styled.button`
   display: block;
@@ -36,10 +36,10 @@ const Button = ({ bg, color, children, classes, onClick }) => (
 );
 
 Button.defaultProps = {
-  classes: '',
+  classes: "",
   onClick: () => {},
-  bg: '',
-  color: '',
+  bg: "",
+  color: "",
 };
 
 Button.propTypes = {
