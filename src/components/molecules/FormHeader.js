@@ -27,7 +27,7 @@ const FormHeader = ({ text }) => (
       size="body"
       text={text}
       align="center"
-      bold="true"
+      bold
     />
   </LoginHeader>
 );

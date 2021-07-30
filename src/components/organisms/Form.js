@@ -105,12 +105,14 @@ const Form = ({ authSuccess }) => {
       <FormHeader icon={UserIconImage} text="Sign In Form" />
       <LoginForm onSubmit={checkNow}>
         <InputField
+          testId="email"
           type="email"
           placeholder="E-mail"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
         <InputField
+          testId="password"
           type="password"
           placeholder="Password"
           value={password}
