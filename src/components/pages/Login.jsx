@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import loginJSON from "../../json/login.json";
 
 // components
 
@@ -10,13 +11,31 @@ import Form from "../organisms/Form";
 import ContainerWrapper from "../layouts/ContainerWrapper";
 import LoginWrapper from "../layouts/LoginWrapper";
 
-const Login = ({ authSuccess }) => (
-  <ContainerWrapper>
-    <LoginWrapper>
-      <Form authSuccess={authSuccess} />
-    </LoginWrapper>
-  </ContainerWrapper>
-);
+const Login = ({ authSuccess }) => {
+  const {
+    formJSON,
+    initialForm,
+    switchLink,
+    switchLinkKey,
+    switchText,
+    formHeaderTitle,
+  } = loginJSON;
+  return (
+    <ContainerWrapper>
+      <LoginWrapper>
+        <Form
+          formHeaderTitle={formHeaderTitle}
+          switchLinkKey={switchLinkKey}
+          switchText={switchText}
+          switchLink={switchLink}
+          formJSON={formJSON}
+          initialForm={initialForm}
+          authSuccess={authSuccess}
+        />
+      </LoginWrapper>
+    </ContainerWrapper>
+  );
+};
 
 Login.defaultProps = {};
 

@@ -35,25 +35,6 @@ const MoreActionsContainer = styled.div`
   margin: 0.5rem auto 2.5rem auto;
 `;
 
-const RememberMe = styled.div`
-  display: flex;
-  align-items: center;
-  flex: 0 0 45%;
-`;
-
-const RememberMeCheckbox = styled.input`
-  display: inline-block;
-  margin-right: 0.5rem;
-  cursor: pointer;
-`;
-
-const RememberMeLabel = styled.label`
-  font-size: 0.9rem;
-  cursor: pointer;
-  letter-spacing: 0.2px;
-  font-weight: 400;
-`;
-
 const ForgotPasswordLink = styled.a`
   text-decoration: none;
   color: #1877f2;
@@ -83,13 +64,22 @@ const AuthSwitchLink = styled(Link)`
   font-weight: 600;
 `;
 
-const Form = ({ authSuccess }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Form = ({
+  authSuccess,
+  formJSON,
+  initialForm,
+  switchLink,
+  switchText,
+  formHeaderTitle,
+  switchLinkKey,
+}) => {
+  const [formState, setFormState] = useState(initialForm);
   const [authorized, setAuthorized] = useState(true);
 
-  const checkNow = (e) => {
+  const submitHandle = (e) => {
     e.preventDefault();
+    console.log(formState, "formState");
+    const { email, password } = formState;
     if (email === "demo@demo.com" && password === "demo") {
       authSuccess();
     } else {
@@ -100,54 +90,80 @@ const Form = ({ authSuccess }) => {
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value, checked } = e.target;
+
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: name === "default" ? checked : value,
+    }));
+  };
+
   return (
     <>
-      <FormHeader icon={UserIconImage} text="Sign In Form" />
-      <LoginForm onSubmit={checkNow}>
-        <InputField
-          testId="email"
-          type="email"
-          placeholder="E-mail"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <InputField
-          testId="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
+      <FormHeader icon={UserIconImage} text={formHeaderTitle} />
+      <LoginForm onSubmit={submitHandle}>
+        {formJSON &&
+          formJSON.map((elem, idx) => (
+            <InputField
+              // eslint-disable-next-line react/no-array-index-key
+              key={idx}
+              testId={elem.testId}
+              type={elem.type}
+              placeholder={elem.placeholder}
+              value={formState[elem.name]}
+              name={elem.name}
+              onChange={handleChange}
+            />
+          ))}
+
         {!authorized && <ErrorMessage>Wrong credentials!</ErrorMessage>}
-        <Button color="#ffffff" bg="#1877f2" onClick={checkNow}>
+        <Button color="#ffffff" bg="#1877f2" onClick={submitHandle}>
           Sign In
         </Button>
         <MoreActionsContainer>
-          <RememberMe>
-            <RememberMeCheckbox
-              type="checkbox"
-              name="remember-me"
-              id="rememberMe"
-            />
-            <RememberMeLabel htmlFor="rememberMe">Remember Me</RememberMeLabel>
-          </RememberMe>
           <ForgotPasswordLink href="#">Forgot Password ?</ForgotPasswordLink>
         </MoreActionsContainer>
       </LoginForm>
       <AuthSwitchContainer>
         <AuthSwitchText>
-          Don&apos;t have an account?
-          <AuthSwitchLink to="/signup">Register</AuthSwitchLink>
+          {switchText}
+          <AuthSwitchLink to={switchLink}>{switchLinkKey}</AuthSwitchLink>
         </AuthSwitchText>
       </AuthSwitchContainer>
     </>
   );
 };
 
-Form.defaultProps = {};
+Form.defaultProps = {
+  formJSON: [],
+  initialForm: {},
+  authSuccess: () => {},
+};
 
 Form.propTypes = {
-  authSuccess: PropTypes.func.isRequired,
+  authSuccess: PropTypes.func,
+  formJSON: PropTypes.arrayOf(
+    PropTypes.shape({
+      component: PropTypes.string.isRequired,
+      testId: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      placeholder: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
+  initialForm: PropTypes.objectOf(
+    PropTypes.shape({
+      fullName: PropTypes.string,
+      email: PropTypes.string,
+      password: PropTypes.string,
+      passwordConfirm: PropTypes.string,
+    }),
+  ),
+  switchLink: PropTypes.string.isRequired,
+  switchText: PropTypes.string.isRequired,
+  formHeaderTitle: PropTypes.string.isRequired,
+  switchLinkKey: PropTypes.string.isRequired,
 };
 
 export default Form;

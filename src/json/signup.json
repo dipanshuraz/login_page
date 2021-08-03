@@ -1,0 +1,42 @@
+{
+  "formJSON": [
+    {
+      "component": "field_input",
+      "testId": "name",
+      "type": "text",
+      "placeholder": "Full Name",
+      "name": "fullName"
+    },
+    {
+      "component": "field_input",
+      "testId": "email",
+      "type": "email",
+      "placeholder": "E-mail",
+      "name": "email"
+    },
+    {
+      "component": "field_input",
+      "testId": "password",
+      "type": "password",
+      "placeholder": "Password",
+      "name": "password"
+    },
+    {
+      "component": "field_input",
+      "testId": "passwordConfirm",
+      "type": "password",
+      "placeholder": "password",
+      "name": "passwordConfirm"
+    }
+  ],
+  "initialForm": {
+    "fullName": "",
+    "email": "",
+    "password": "",
+    "passwordConfirm": ""
+  },
+  "switchLink": "/login",
+  "switchLinkKey": "Login",
+  "switchText": "Already have an account?",
+  "formHeaderTitle": "Register "
+}
