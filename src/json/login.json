@@ -22,5 +22,6 @@
   "switchLink": "/signup",
   "switchText": "Don't have an account?",
   "switchLinkKey": "Register",
-  "formHeaderTitle": "Login Now"
+  "formHeaderTitle": "Login Now",
+  "buttonText": "Sign In"
 }
