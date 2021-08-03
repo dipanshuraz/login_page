@@ -13,6 +13,25 @@ describe("SignUp Page", () => {
     const headerComponent = screen.getByText("Register");
     expect(headerComponent).toBeInTheDocument();
   });
+  test("renders forget password content", () => {
+    render(
+      <BrowserRouter>
+        <Signup />
+      </BrowserRouter>,
+    );
+    const headerComponent = screen.getByText("Forgot Password ?");
+    expect(headerComponent).toBeInTheDocument();
+  });
+
+  test("renders already have an account content", () => {
+    render(
+      <BrowserRouter>
+        <Signup />
+      </BrowserRouter>,
+    );
+    const headerComponent = screen.getByText("Already have an account?");
+    expect(headerComponent).toBeInTheDocument();
+  });
 
   test("rendering for sign up button", () => {
     render(
