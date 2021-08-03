@@ -38,5 +38,6 @@
   "switchLink": "/login",
   "switchLinkKey": "Login",
   "switchText": "Already have an account?",
-  "formHeaderTitle": "Register "
+  "formHeaderTitle": "Register ",
+  "buttonText": "Sign Up"
 }

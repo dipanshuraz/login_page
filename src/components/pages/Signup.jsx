@@ -20,6 +20,7 @@ const Signup = () => {
     switchLinkKey,
     switchText,
     formHeaderTitle,
+    buttonText,
   } = signUpJSON;
   return (
     <ContainerWrapper>
@@ -31,6 +32,7 @@ const Signup = () => {
           formJSON={formJSON}
           initialForm={initialForm}
           formHeaderTitle={formHeaderTitle}
+          buttonText={buttonText}
         />
       </LoginWrapper>
     </ContainerWrapper>
