@@ -21,7 +21,7 @@ describe("SignUp Page", () => {
       </BrowserRouter>,
     );
     const signupButtonComponent = screen.getByRole("button", {
-      name: "Sign In",
+      name: "Sign Up",
     });
     expect(signupButtonComponent).toBeInTheDocument();
   });

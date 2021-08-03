@@ -72,13 +72,14 @@ const Form = ({
   switchText,
   formHeaderTitle,
   switchLinkKey,
+  buttonText,
 }) => {
   const [formState, setFormState] = useState(initialForm);
   const [authorized, setAuthorized] = useState(true);
 
   const submitHandle = (e) => {
     e.preventDefault();
-    console.log(formState, "formState");
+    // console.log(formState, "formState");
     const { email, password } = formState;
     if (email === "demo@demo.com" && password === "demo") {
       authSuccess();
@@ -119,7 +120,7 @@ const Form = ({
 
         {!authorized && <ErrorMessage>Wrong credentials!</ErrorMessage>}
         <Button color="#ffffff" bg="#1877f2" onClick={submitHandle}>
-          Sign In
+          {buttonText}
         </Button>
         <MoreActionsContainer>
           <ForgotPasswordLink href="#">Forgot Password ?</ForgotPasswordLink>
@@ -164,6 +165,7 @@ Form.propTypes = {
   switchText: PropTypes.string.isRequired,
   formHeaderTitle: PropTypes.string.isRequired,
   switchLinkKey: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
 };
 
 export default Form;

@@ -19,6 +19,7 @@ const Login = ({ authSuccess }) => {
     switchLinkKey,
     switchText,
     formHeaderTitle,
+    buttonText,
   } = loginJSON;
   return (
     <ContainerWrapper>
@@ -31,6 +32,7 @@ const Login = ({ authSuccess }) => {
           formJSON={formJSON}
           initialForm={initialForm}
           authSuccess={authSuccess}
+          buttonText={buttonText}
         />
       </LoginWrapper>
     </ContainerWrapper>
