@@ -12,7 +12,14 @@ const Input = styled.input`
   border-radius: 0.5rem;
 `;
 
-const InputField = ({ placeholder, value, onChange, classes, testId }) => (
+const InputField = ({
+  placeholder,
+  value,
+  onChange,
+  classes,
+  testId,
+  name,
+}) => (
   <Input
     type="text"
     data-testid={testId}
@@ -20,6 +27,7 @@ const InputField = ({ placeholder, value, onChange, classes, testId }) => (
     onChange={onChange}
     placeholder={placeholder}
     className={classes}
+    name={name}
   />
 );
 
@@ -29,6 +37,7 @@ InputField.defaultProps = {
   onChange: () => {},
   placeholder: "",
   classes: "",
+  name: "",
 };
 
 InputField.propTypes = {
@@ -37,6 +46,7 @@ InputField.propTypes = {
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   classes: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default InputField;

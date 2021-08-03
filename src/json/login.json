@@ -1,0 +1,26 @@
+{
+  "formJSON": [
+    {
+      "component": "field_input",
+      "testId": "email",
+      "type": "email",
+      "placeholder": "E-mail",
+      "name": "email"
+    },
+    {
+      "component": "field_input",
+      "testId": "password",
+      "type": "password",
+      "placeholder": "Password",
+      "name": "password"
+    }
+  ],
+  "initialForm": {
+    "email": "",
+    "password": ""
+  },
+  "switchLink": "/signup",
+  "switchText": "Don't have an account?",
+  "switchLinkKey": "Register",
+  "formHeaderTitle": "Login Now"
+}
