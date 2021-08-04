@@ -12,7 +12,7 @@ const Input = styled.input`
   border-radius: 0.5rem;
 `;
 
-const InputField = ({
+export const InputField = ({
   placeholder,
   value,
   onChange,
@@ -48,5 +48,3 @@ InputField.propTypes = {
   classes: PropTypes.string,
   name: PropTypes.string,
 };
-
-export default InputField;

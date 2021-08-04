@@ -4,8 +4,7 @@ import styled from "styled-components/macro";
 
 // components
 // atoms
-import Text from "../atoms/Text";
-import Image from "../atoms/Image";
+import { Text, Image } from "../atoms";
 
 import UserIconImage from "../../assets/user.png";
 
@@ -18,7 +17,7 @@ const LoginHeader = styled.div`
   flex-direction: column;
 `;
 
-const FormHeader = ({ text }) => (
+export const FormHeader = ({ text }) => (
   <LoginHeader>
     <Image url={UserIconImage} margin="0 0 1.25rem 0" />
     <Text
@@ -39,5 +38,3 @@ FormHeader.defaultProps = {
 FormHeader.propTypes = {
   text: PropTypes.string,
 };
-
-export default FormHeader;

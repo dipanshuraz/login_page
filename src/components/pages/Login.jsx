@@ -5,13 +5,12 @@ import loginJSON from "../../json/login.json";
 // components
 
 // organisms
-import Form from "../organisms/Form";
+import { Form } from "../organisms";
 
 // templates
-import ContainerWrapper from "../layouts/ContainerWrapper";
-import LoginWrapper from "../layouts/LoginWrapper";
+import { ContainerWrapper, LoginWrapper } from "../layouts";
 
-const Login = ({ authSuccess }) => {
+export const Login = ({ authSuccess }) => {
   const {
     formJSON,
     initialForm,
@@ -44,5 +43,3 @@ Login.defaultProps = {};
 Login.propTypes = {
   authSuccess: PropTypes.func.isRequired,
 };
-
-export default Login;

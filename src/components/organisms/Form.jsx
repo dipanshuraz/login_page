@@ -6,12 +6,11 @@ import PropTypes from "prop-types";
 // components
 
 // atoms
-import InputField from "../atoms/InputField";
-import Button from "../atoms/Button/Button";
+import { InputField, Button } from "../atoms";
 
 // assets
 import UserIconImage from "../../assets/user.png";
-import FormHeader from "../molecules/FormHeader";
+import { FormHeader } from "../molecules";
 
 const LoginForm = styled.form`
   width: 70%;
@@ -64,7 +63,7 @@ const AuthSwitchLink = styled(Link)`
   font-weight: 600;
 `;
 
-const Form = ({
+export const Form = ({
   authSuccess,
   formJSON,
   initialForm,
@@ -167,5 +166,3 @@ Form.propTypes = {
   switchLinkKey: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
-
-export default Form;

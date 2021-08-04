@@ -19,10 +19,8 @@ const Wrapper = styled.div`
   }
 `;
 
-const DivWrapper = ({ children }) => <Wrapper>{children}</Wrapper>;
+export const DivWrapper = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 DivWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default DivWrapper;

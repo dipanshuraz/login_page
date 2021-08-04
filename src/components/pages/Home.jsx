@@ -5,13 +5,12 @@ import PropTypes from "prop-types";
 // atoms
 
 // molecules
-import HomeContainer from "../molecules/HomeContainer";
+import { HomeContainer } from "../molecules";
 
 // templates
-import ContainerWrapper from "../layouts/ContainerWrapper";
-import DivWrapper from "../layouts/DivWrapper";
+import { ContainerWrapper, DivWrapper } from "../layouts";
 
-const Home = ({ handleLogout }) => (
+export const Home = ({ handleLogout }) => (
   <ContainerWrapper>
     <DivWrapper>
       <HomeContainer handleLogout={handleLogout} />
@@ -24,5 +23,3 @@ Home.defaultProps = {};
 Home.propTypes = {
   handleLogout: PropTypes.func.isRequired,
 };
-
-export default Home;

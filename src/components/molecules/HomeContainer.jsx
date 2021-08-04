@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 
 // components
 // atoms
-import Button from "../atoms/Button/Button";
-import Text from "../atoms/Text";
+import { Button, Text } from "../atoms";
 
-const HomeContainer = ({ handleLogout }) => (
+export const HomeContainer = ({ handleLogout }) => (
   <>
     <Text
       tag="h1"
@@ -25,5 +24,3 @@ HomeContainer.defaultProps = {};
 HomeContainer.propTypes = {
   handleLogout: PropTypes.func.isRequired,
 };
-
-export default HomeContainer;

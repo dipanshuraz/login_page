@@ -6,13 +6,12 @@ import signUpJSON from "../../json/signup.json";
 // components
 
 // organisms
-import Form from "../organisms/Form";
+import { Form } from "../organisms";
 
 // templates
-import ContainerWrapper from "../layouts/ContainerWrapper";
-import LoginWrapper from "../layouts/LoginWrapper";
+import { ContainerWrapper, LoginWrapper } from "../layouts";
 
-const Signup = () => {
+export const Signup = () => {
   const {
     formJSON,
     initialForm,
@@ -38,5 +37,3 @@ const Signup = () => {
     </ContainerWrapper>
   );
 };
-
-export default Signup;

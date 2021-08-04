@@ -12,7 +12,7 @@ const ButtonWrapper = styled.button`
 `;
 
 /* eslint no-unused-vars : "off" */
-const Button = ({ bg, color, children, classes, onClick }) => (
+export const Button = ({ bg, color, children, classes, onClick }) => (
   <ButtonWrapper
     color={color}
     bg={bg}
@@ -37,5 +37,3 @@ Button.propTypes = {
   bg: PropTypes.string,
   color: PropTypes.string,
 };
-
-export default Button;

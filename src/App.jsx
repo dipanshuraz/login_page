@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Signup from "./components/pages/Signup";
+import { Home, Login, Signup } from "./components/pages";
 
 function App() {
   const history = useHistory();

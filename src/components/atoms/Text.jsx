@@ -31,7 +31,7 @@ const TextItem = styled.span`
   `}
 `;
 
-const Text = ({ bold, color, margin, size, text, tag, align }) => (
+export const Text = ({ bold, color, margin, size, text, tag, align }) => (
   <TextItem
     as={tag}
     size={size}
@@ -62,5 +62,3 @@ Text.propTypes = {
   tag: PropTypes.string,
   align: PropTypes.string,
 };
-
-export default Text;

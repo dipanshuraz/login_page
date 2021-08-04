@@ -17,7 +17,7 @@ const Img = styled.img`
     `}
 `;
 
-const Image = ({ cover, url, position, align, margin }) => (
+export const Image = ({ cover, url, position, align, margin }) => (
   <Img
     src={url}
     cover={cover}
@@ -42,5 +42,3 @@ Image.propTypes = {
   align: PropTypes.string,
   margin: PropTypes.string,
 };
-
-export default Image;

@@ -27,12 +27,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const LoginWrapper = ({ children }) => <Wrapper>{children}</Wrapper>;
+export const LoginWrapper = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 LoginWrapper.defaultProps = {};
 
 LoginWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-export default LoginWrapper;

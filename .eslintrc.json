@@ -9,6 +9,7 @@
   "rules": {
     "semi": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": [
       0,
       {
@@ -17,6 +18,7 @@
         "peerDependencies": false
       }
     ]
+
     // "prettier/prettier": [
     //   "error",
     //   {

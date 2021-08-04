@@ -25,7 +25,7 @@
       "component": "field_input",
       "testId": "passwordConfirm",
       "type": "password",
-      "placeholder": "password",
+      "placeholder": "Confirm password",
       "name": "passwordConfirm"
     }
   ],
