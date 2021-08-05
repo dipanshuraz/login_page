@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
+import "./Styles/Styles.scss";
 // components
 
 // atoms
@@ -12,49 +12,6 @@ import Button from "../atoms/Button/Button";
 // assets
 import UserIconImage from "../../assets/user.png";
 import FormHeader from "../molecules/FormHeader";
-
-const LoginForm = styled.form`
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ErrorMessage = styled.p`
-  color: red;
-  font-size: 0.9rem;
-  font-weight: 600;
-`;
-
-const MoreActionsContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.5rem auto 2.5rem auto;
-`;
-
-const ForgotPasswordLink = styled.a`
-  text-decoration: none;
-  color: #1877f2;
-  letter-spacing: 0.2px;
-  font-weight: 400;
-  font-size: 0.9rem;
-`;
-
-const AuthSwitchContainer = styled.div`
-  width: 100%;
-  background: #dadada;
-  padding: 1.5rem 0;
-  display: grid;
-  place-items: center;
-`;
-
-const AuthSwitchText = styled.p`
-  font-size: 0.95rem;
-  font-weight: 400;
-`;
 
 const AuthSwitchLink = styled(Link)`
   color: #1877f2;
@@ -103,7 +60,7 @@ const Form = ({
   return (
     <>
       <FormHeader icon={UserIconImage} text={formHeaderTitle} />
-      <LoginForm onSubmit={submitHandle}>
+      <form className="form" onSubmit={submitHandle}>
         {formJSON &&
           formJSON.map((elem, idx) => (
             <InputField
@@ -118,20 +75,25 @@ const Form = ({
             />
           ))}
 
-        {!authorized && <ErrorMessage>Wrong credentials!</ErrorMessage>}
+        {!authorized && (
+          <p className="form__errorMessage">Wrong credentials!</p>
+        )}
         <Button color="#ffffff" bg="#1877f2" onClick={submitHandle}>
           {buttonText}
         </Button>
-        <MoreActionsContainer>
-          <ForgotPasswordLink href="#">Forgot Password ?</ForgotPasswordLink>
-        </MoreActionsContainer>
-      </LoginForm>
-      <AuthSwitchContainer>
-        <AuthSwitchText>
+        <div className="form__moreActionContainer">
+          <a className="form__forgotPasswordLink" href="/#">
+            Forgot Password ?
+          </a>
+        </div>
+      </form>
+
+      <div className="authSwitchContainer">
+        <p className="authSwitchContainer__text">
           {switchText}
           <AuthSwitchLink to={switchLink}>{switchLinkKey}</AuthSwitchLink>
-        </AuthSwitchText>
-      </AuthSwitchContainer>
+        </p>
+      </div>
     </>
   );
 };

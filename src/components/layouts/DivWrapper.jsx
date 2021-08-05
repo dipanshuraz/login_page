@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Styles/DivWrapper.scss";
+import "./Styles/Styles.scss";
 
 const DivWrapper = ({ children }) => (
   <div className="divWrapper">{children}</div>

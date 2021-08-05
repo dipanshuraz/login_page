@@ -16,7 +16,8 @@
         "optionalDependencies": false,
         "peerDependencies": false
       }
-    ]
+    ],
+    "eslint-disable-next-line"
     // "prettier/prettier": [
     //   "error",
     //   {

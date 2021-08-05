@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Styles/ContainerWrapper.scss";
+import "./Styles/Styles.scss";
 
 const ContainerWrapper = ({ children }) => (
   <div className="container">{children}</div>

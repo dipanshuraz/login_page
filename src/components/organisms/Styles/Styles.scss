@@ -1,0 +1,49 @@
+$error-color: red;
+$success-color: #1877f2;
+$white-color: #dadada;
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 70%;
+  margin: 0 auto;
+  @include flex-center;
+  &__errorMessage {
+    color: $error-color;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__moreActionContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem auto 2.5rem auto;
+  }
+
+  &__forgotPasswordLink {
+    text-decoration: none;
+    color: $success-color;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+}
+
+.authSwitchContainer {
+  width: 100%;
+  background: $white-color;
+  padding: 1.5rem 0;
+  display: grid;
+  place-items: center;
+
+  &____text {
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+}
