@@ -1,16 +1,10 @@
 import React from "react";
-import styled from "styled-components/macro";
 import PropTypes from "prop-types";
+import "./Styles/Styles.scss";
 
-const Container = styled.div`
-  width: 100%;
-  height: 95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ContainerWrapper = ({ children }) => <Container>{children}</Container>;
+const ContainerWrapper = ({ children }) => (
+  <div className="container">{children}</div>
+);
 
 ContainerWrapper.defaultProps = {};
 
